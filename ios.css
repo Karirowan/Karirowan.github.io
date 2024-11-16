@@ -166,7 +166,7 @@ button {
         }
         
         .slytherin {
-            background-image: url('img_4070.jpeg'); /* Зелёный */
+            background-image: url('2.png'); /* Зелёный */
          background-position: center;
         background-attachment: fixed; /* Фиксирует фон */
   background-size: cover; /* Масштабирует фон, чтобы покрыть весь экран */
@@ -177,7 +177,7 @@ button {
         }
 
         .ravenclaw {
-            background-image: url('img_4071.jpeg'); /* Синий */
+            background-image: url('3.png'); /* Синий */
         background-attachment: fixed; /* Фиксирует фон */
   background-size: cover; /* Масштабирует фон, чтобы покрыть весь экран */
   background-repeat: no-repeat; /* Предотвращает повторение фона */
@@ -188,7 +188,7 @@ button {
         }
         
         .hufflepuff {
-            background-image: url('img_4072.jpeg'); /* Жёлтый */
+            background-image: url('4.png'); /* Жёлтый */ 
 background-attachment: fixed; /* Фиксирует фон */
   background-size: cover; /* Масштабирует фон, чтобы покрыть весь экран */
   background-repeat: no-repeat; /* Предотвращает повторение фона */
@@ -198,7 +198,7 @@ background-attachment: fixed; /* Фиксирует фон */
         }
 
          .gryffindor {
-             background-image: url('img_4069.jpeg'); 
+             background-image: url('5.png'); 
        background-attachment: fixed; /* Фиксирует фон */
   background-size: cover; /* Масштабирует фон, чтобы покрыть весь экран */
   background-repeat: no-repeat; /* Предотвращает повторение фона */
