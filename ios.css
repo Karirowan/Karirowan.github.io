@@ -238,7 +238,6 @@ h1 {
 form {
   font-family: "Franklin Gothic Heavy";
   font-size: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,6 +257,8 @@ select {
   border-radius: 5px;
   border: 1px solid #ccc;
   outline: none;
+  width: 500px;
+  max-width: 80%;
 }
 
 textarea {
