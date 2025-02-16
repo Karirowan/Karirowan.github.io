@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./normalize.css" rel="stylesheet" />
@@ -52,13 +52,13 @@
             <p class="links__title">Окончила Горный университет</p>
           </li>
           <li class="links__link">
-            <p class="links__title">Есть кот, зовут Кот</p>
-          </li>
-          <li class="links__link">
             <p class="links__title">Быстро обучаюсь новому, поэтому в копилочке есть множество различных навыков</p>
           </li>
           <li class="links__link">
             <p class="links__title">Люблю хорошую музыку, качественный кинематограф и литературу</p>
+          </li>
+          <li class="links__link">
+            <p class="links__title">Ниже можешь воспользоваться шифратором для тайных переписок (это будет наш маленький секрет)</p>
           </li>
           <li class="links__link">
             <p class="links__title">Если ты любишь ГП, то мы уже друзья</p>
@@ -69,12 +69,6 @@
         </ul>
       </section>
     </main>
-
-
-
-
-
-
 <head>
     <meta charset="UTF-8">
     <title>Факультеты Хогвартса</title>
@@ -82,22 +76,36 @@
 <body>
     <button id="facultyButton">Узнать свой факультет</button>
     <p id="result"></p>
-    <script type="text/javascript" src="JS"></script>
 </body>
-
-
-
-
 <title>Выбор факультета</title>
-    
 </head>
 <body>
-    
     <p id="result"></p>
-
-    
-
+</html>
 
 
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифр Цезаря</title>
+    <link rel="stylesheet" href="ios.css">
+</head>
+<body>
+    <h1>Шифр Цезаря</h1>
+    <form id="cipherForm">
+        <textarea id="plaintext" placeholder="Введите текст..."></textarea>
+        <label for="language">Язык:</label>
+        <select id="language">
+            <option value="Russian">Русский</option>
+            <option value="English">English</option>
+        </select>
+        <label for="shift">Значение сдвига:</label>
+        <input type="number" id="shift" min="1" max="25" value="1">
+    </form>
+    <body>
+        <button type="button" id="encryptButton">Зашифровать</button>
+        <button type="button" id="decryptButton">Расшифровать</button>
+    </body>
+    <div id="output"></div>
+    <script src="js.js"></script>
+</body>
 </html>

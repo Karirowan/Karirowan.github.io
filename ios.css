@@ -154,12 +154,6 @@ button {
   color: #0c79ff;
   text-decoration: none;
 }
-
-<head>
-    <meta charset="UTF-8">
-    <title>Факультеты Хогвартса</title>
-    <style>
-
         .gryffindor {
              background-image: url('img_4070.jpeg'); 
         background-position: center;
@@ -206,7 +200,7 @@ background-attachment: fixed; /* Фиксирует фон */
   margin: 0;
   padding: 0;
         }
-        
+      
        .styled-text {
     border: 2px solid #000; /* Рамка */
     background-color: #f0f0f0; /* Фон */
@@ -216,15 +210,93 @@ background-attachment: fixed; /* Фиксирует фон */
     padding: 10px; /* Внутренние отступы */
     border-radius: 10px; /* Скругление углов */
 }
-    </style>
-</head>
+  
 
-    <!-- Скрипт -->
-    <script src="faculties.js"></script>
+/* Цезарь */
 
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
 }
 
-    
-</body>
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 15px 0;
+  font-family: "Franklin Gothic Heavy";
+  margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
+  color: #082567;
+   -webkit-text-stroke-width: 1px; /* Толщина обводки */
+    -webkit-text-stroke-color: white; /* Цвет обводки */
+     text-shadow: 2px 2px 16px #ffffff; /* Горизонтальное смещение, вертикальное смещение, радиус размытия, цвет тени */
+}
+
+form {
+  font-family: "Franklin Gothic Heavy";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
+  -webkit-text-stroke-width: 0.3px; /* Толщина обводки */
+  -webkit-text-stroke-color: white; /* Цвет обводки */
+   text-shadow: 2px 2px 16px #ffffff; /* Горизонтальное смещение, вертикальное смещение, радиус размытия, цвет тени */
+}
+
+textarea,
+input[type="number"],
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+  width: 400px;
+}
+
+input[type="number"], select {
+  width: 120px;
+  font-family: "Helvetica";
+  color: #000000;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#output {
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  width: 500px;
+  max-width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  font-family: "Franklin Gothic Heavy";
+  color: #000000;
+  margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
+}
 
