@@ -101,4 +101,103 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return result;
     }
+
+
+
+  // Обработчик нажатия на кнопку
+  document.getElementById('compareButton').addEventListener('click', compareTexts);
 });
+
+// Функция для выделения различий в тексте с использованием алгоритма Левенштейна
+function highlightDifferences(text1, text2) {
+    // Алгоритм Левенштейна для нахождения минимального количества операций редактирования
+    function levenshteinDistance(s1, s2) {
+        const m = s1.length;
+        const n = s2.length;
+        const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+        for (let i = 0; i <= m; i++) {
+            dp[i][0] = i;
+        }
+
+        for (let j = 0; j <= n; j++) {
+            dp[0][j] = j;
+        }
+
+        for (let i = 1; i <= m; i++) {
+            for (let j = 1; j <= n; j++) {
+                if (s1[i - 1] === s2[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1]; // Совпадение
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,     // Удаление
+                        dp[i][j - 1] + 1,     // Вставка
+                        dp[i - 1][j - 1] + 1  // Замена
+                    );
+                }
+            }
+        }
+
+        // Возвращаем матрицу расстояний
+        return dp;
+    }
+
+    // Функция для построения результирующего текста с учетом различий
+    function buildHighlightedText(dpMatrix, s1, s2) {
+        let resultHtml = '';
+        let i = s1.length;
+        let j = s2.length;
+
+        while (i > 0 && j > 0) {
+            if (dpMatrix[i][j] === dpMatrix[i - 1][j - 1] && s1[i - 1] === s2[j - 1]) {
+                // Символы совпадают
+                resultHtml = s1[i - 1] + resultHtml;
+                i--;
+                j--;
+            } else if (dpMatrix[i][j] === dpMatrix[i - 1][j] + 1) {
+                // Удаление
+                resultHtml = `<span class="highlight">${s1[i - 1]}</span>` + resultHtml;
+                i--;
+            } else if (dpMatrix[i][j] === dpMatrix[i][j - 1] + 1) {
+                // Вставка
+                resultHtml = `<span class="highlight">${s2[j - 1]}</span>` + resultHtml;
+                j--;
+            } else {
+                // Замена
+                resultHtml = `<span class="highlight">${s1[i - 1]}</span>` + resultHtml;
+                i--;
+                j--;
+            }
+        }
+
+        // Обрабатываем оставшиеся символы
+        while (i > 0) {
+            resultHtml = `<span class="highlight">${s1[i - 1]}</span>` + resultHtml;
+            i--;
+        }
+
+        while (j > 0) {
+            resultHtml = `<span class="highlight">${s2[j - 1]}</span>` + resultHtml;
+            j--;
+        }
+
+        return resultHtml;
+    }
+
+    // Основной процесс сравнения
+    const dpMatrix = levenshteinDistance(text1, text2);
+    const highlightedText = buildHighlightedText(dpMatrix, text1, text2);
+
+    return highlightedText;
+}
+
+// Основная функция для сравнения текстов
+function compareTexts() {
+    const text1 = document.getElementById('text1').value;
+    const text2 = document.getElementById('text2').value;
+
+    const highlightedText = highlightDifferences(text1, text2);
+
+    document.getElementById('result-div').innerHTML = highlightedText;
+
+}

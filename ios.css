@@ -276,6 +276,7 @@ input[type="number"], select {
   max-width: 80%;
   font-family: "Helvetica";
   color: #000000;
+  margin: 20px auto
 }
 
 button {
@@ -307,3 +308,14 @@ button:hover {
   margin-bottom: 20px; /* Создаем отступ в 20 пикселей под элементом */
 }
 
+#input-container {
+  text-align: center; /* Центрируем контент внутри контейнера */
+}
+
+/* Различия */
+#input-container label,
+#input-container textarea {
+  display: inline-block; /* Делаем элементы блочно-строчными */
+  text-align: left;      /* Выравниваем текст внутри элементов по левому краю */
+  margin-bottom: 10px;   /* Добавляем небольшой отступ между элементами */
+}

@@ -8,7 +8,6 @@
     <link href="./ios.css" rel="stylesheet" />
     <title>Document</title>
     <link rel="icon" type="image/png" href="favicon.png">
-
   </head>
   <body>
     <header class="header">
@@ -106,6 +105,39 @@
         <button type="button" id="decryptButton">Расшифровать</button>
     </body>
     <div id="output"></div>
-    <script src="js.js"></script>
+</body>
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Сравнение текстов</title>
+  <style>
+      .highlight {
+          background-color: yellow;
+      }
+  </style>
+</head>
+<body>
+
+<h1>Сравнение текстов</h1>
+
+<div id="input-container">
+  <label for="text1">Первый текст:</label><br>
+  <textarea id="text1" rows="10" cols="50"></textarea><br>
+  
+  <label for="text2">Второй текст:</label><br>
+  <textarea id="text2" rows="10" cols="50"></textarea><br>
+</div>
+
+<button onclick="compareTexts()">Найти различия</button>
+
+<div id="result-container">
+  <p>Результат сравнения:</p>
+  <div id="result-div" style="width: 500px; min-height: 100px; margin: 20px auto; border: 1px solid #ccc; padding: 10px; white-space: pre-wrap; word-break: break-all; overflow-y: auto;"></div>
+</div>
+
+<script src="js.js"></script>
 </body>
 </html>
